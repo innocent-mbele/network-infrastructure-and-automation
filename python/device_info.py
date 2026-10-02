@@ -4,7 +4,6 @@ import re
 from pathlib import Path
 
 
-# Cisco device connection details
 device = {
     "device_type": "cisco_ios",
     "host": "10.10.20.171",
@@ -14,12 +13,10 @@ device = {
 }
 
 
-# Connect to the Cisco device
 connection = ConnectHandler(**device)
 connection.enable()
 
 
-# Collect device information
 version_output = connection.send_command("show version")
 
 interface_data = connection.send_command(
@@ -28,11 +25,9 @@ interface_data = connection.send_command(
 )
 
 
-# Extract hostname
 hostname = connection.find_prompt().replace("#", "").strip()
 
 
-# Extract IOS version
 version_match = re.search(
     r"Version ([0-9.]+)",
     version_output
@@ -45,7 +40,6 @@ ios_version = (
 )
 
 
-# Extract uptime
 uptime_match = re.search(
     r"R1 uptime is (.+)",
     version_output
@@ -58,7 +52,6 @@ uptime = (
 )
 
 
-# Build structured interface information
 interfaces = []
 
 for interface in interface_data:
@@ -70,11 +63,9 @@ for interface in interface_data:
     })
 
 
-# Close the SSH connection
 connection.disconnect()
 
 
-# Build final report
 report = {
     "hostname": hostname,
     "ios_version": ios_version,
@@ -83,19 +74,16 @@ report = {
 }
 
 
-# Create output directory
 output_dir = Path("api")
 output_dir.mkdir(exist_ok=True)
 
 
-# Save JSON report
 output_file = output_dir / "r1-device-info.json"
 
 with open(output_file, "w") as file:
     json.dump(report, file, indent=4)
 
 
-# Display result
 print("\n=== DEVICE INFORMATION ===")
 print(json.dumps(report, indent=4))
 
