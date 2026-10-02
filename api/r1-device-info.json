@@ -1,0 +1,31 @@
+{
+    "hostname": "R1",
+    "ios_version": "17.15.1",
+    "uptime": "1 hour, 17 minutes",
+    "interfaces": [
+        {
+            "interface": "Ethernet0/0",
+            "ip_address": "10.10.10.100",
+            "status": "up",
+            "protocol": "up"
+        },
+        {
+            "interface": "Ethernet0/1",
+            "ip_address": "1.1.1.1",
+            "status": "up",
+            "protocol": "up"
+        },
+        {
+            "interface": "Ethernet0/2",
+            "ip_address": "10.10.20.171",
+            "status": "up",
+            "protocol": "up"
+        },
+        {
+            "interface": "Ethernet0/3",
+            "ip_address": "unassigned",
+            "status": "administratively down",
+            "protocol": "down"
+        }
+    ]
+}
