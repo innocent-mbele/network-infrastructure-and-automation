@@ -21,6 +21,7 @@ network-infrastructure-and-automation/
 ├── screenshots/
 ├── .gitignore
 └── README.md
+```
 
 ---
 
