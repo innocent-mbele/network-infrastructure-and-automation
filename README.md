@@ -22,6 +22,8 @@ network-infrastructure-and-automation/
 ├── .gitignore
 └── README.md
 
+---
+
 ## Screenshots
 
 ### 1. Python Device Information Automation
