@@ -1,7 +1,7 @@
 {
     "hostname": "R1",
     "ios_version": "17.15.1",
-    "uptime": "1 hour, 17 minutes",
+    "uptime": "54 minutes",
     "interfaces": [
         {
             "interface": "Ethernet0/0",
